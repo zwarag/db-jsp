@@ -70,3 +70,8 @@ CREATE TABLE PASSAGE_WARTET(
 	FOREIGN KEY (passage2) REFERENCES PASSAGE(Passagennummer)
 )
 
+CREATE TABLE BANK(
+	Bankleitzahl varchar(50),
+	Bankname varchar(50),
+	primary key(Bankleitzahl, Bankname)
+)
