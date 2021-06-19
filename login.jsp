@@ -5,19 +5,20 @@
 <sql:setDataSource
   driver="oracle.jdbc.driver.OracleDriver"
   url="jdbc:oracle:thin:@localhost:1521/xepdb1"
-  user="user"
-  password="password"
+  user="csdc22bb_08"
+  password="Toox1aa"
 />
 
 <div>
   <h2>Login</h2>
 </div>
 <div>
-  <form>
+  <form method="GET" action="index.jsp">
+    <input type="hidden" name="menu" value="user"/>
     <table class="table table-sm">
       <tr>
         <td>
-          <label for="verscherungsnummer">Versicherungsnummer</label>
+          <label for="versicherungsnummer">Versicherungsnummer</label>
         </td>
         <td>
           <input
