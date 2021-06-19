@@ -54,7 +54,7 @@
 									<jsp:include page="${param.menu}.jsp" />
 								</c:if>
 								<c:if test="${empty param.menu}">
-									<jsp:include page="init.jsp" />
+									<jsp:include page="login.jsp" />
 								</c:if>
 					</main>
 		
