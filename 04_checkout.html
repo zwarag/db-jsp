@@ -52,7 +52,6 @@
               id="startmenu"
               >Startseite</a
             >
-
             <div class="nav-item dropdown">
               <a
                 class="
@@ -114,39 +113,35 @@
         </div>
       </header>
       <main role="main" class="inner cover">
-        <!-- IMPLEMENT LOGIN FORM -->
         <form>
           <table class="table table-sm">
             <tr>
-              <td>
-                <label for="verscherungsnummer">Versicherungsnummer</label>
-              </td>
-              <td>
-                <input
-                  class="form-control"
-                  type="text"
-                  id="versicherungsnummer"
-                  name="versicherungsnummer"
-                />
-              </td>
+              <th scope="col">Versicherungsnummer</th>
+              <th scope="col">Geburtsdatum</th>
+              <th scope="col">Gewaehlte Passage</th>
+              <th scope="col">Klasse</th>
             </tr>
             <tr>
+              <td>1111</td>
+              <td>12.12.2020</td>
+              <td>1</td>
               <td>
-                <label for="geburtsdatum">Geburtsdatum</label>
-              </td>
-              <td>
-                <input
-                  class="form-control"
-                  type="date"
-                  id="geburtsdatum"
-                  name="geburtsdatum"
-                />
+                <div class="form-group">
+                  <select id="klasse" name="klasse">
+                    <option value="economy">economy</option>
+                    <option value="business">business</option>
+                    <option value="first-class">first-class</option>
+                  </select>
+                </div>
               </td>
             </tr>
           </table>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary float-right">Login</button>
-          </div>
+          <button type="submit" class="btn btn-primary ml-2 float-right">
+            Buchen
+          </button>
+          <button type="submit" class="btn btn-danger float-right">
+            Abbrechen
+          </button>
         </form>
       </main>
 

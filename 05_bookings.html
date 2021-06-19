@@ -52,7 +52,6 @@
               id="startmenu"
               >Startseite</a
             >
-
             <div class="nav-item dropdown">
               <a
                 class="
@@ -114,40 +113,23 @@
         </div>
       </header>
       <main role="main" class="inner cover">
-        <!-- IMPLEMENT LOGIN FORM -->
-        <form>
-          <table class="table table-sm">
-            <tr>
-              <td>
-                <label for="verscherungsnummer">Versicherungsnummer</label>
-              </td>
-              <td>
-                <input
-                  class="form-control"
-                  type="text"
-                  id="versicherungsnummer"
-                  name="versicherungsnummer"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="geburtsdatum">Geburtsdatum</label>
-              </td>
-              <td>
-                <input
-                  class="form-control"
-                  type="date"
-                  id="geburtsdatum"
-                  name="geburtsdatum"
-                />
-              </td>
-            </tr>
-          </table>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary float-right">Login</button>
-          </div>
-        </form>
+	      <!-- LIST ALL BOOKINGS OF USER -->
+        <table class="table table-sm">
+		      <tr>
+			      <th>PassagierNR</th>
+			      <th>PassagenNR</th>
+			      <th>BuchungsNR</th>
+			      <th>Buchungsdatum</th>
+			      <th>Klasse</th>
+		      </tr>
+		      <tr>
+			      <td>11111</td>
+			      <td>2</td>
+			      <td>11231321</td>
+			      <td>1.1.2020 11:00</td>
+			      <td>first-class</td>
+		      </tr>
+	      </table>
       </main>
 
       <footer class="mastfoot mt-auto text-center">

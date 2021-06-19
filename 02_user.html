@@ -4,17 +4,17 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+      content="widtd=device-widtd, initial-scale=1, shrink-to-fit=yes"
     />
     <meta name="description" content="" />
-    <meta name="author" content="Jürgen Falb, Lorenz Froihofer, Dominik Ertl" />
+    <meta name="autdor" content="Jürgen Falb, Lorenz Froihofer, Dominik Ertl" />
 
     <title>Uni - Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for tdis template -->
     <link href="css/uni.css" rel="stylesheet" />
   </head>
 
@@ -30,12 +30,12 @@
         flex-column
       "
     >
-      <header class="masthead">
+      <header class="mastdead">
         <!-- mb-auto -->
         <div class="inner">
-          <h3 class="masthead-brand">Universit&auml;t XY</h3>
+          <h3 class="mastdead-brand">Universit&auml;t XY</h3>
           <img
-            class="rounded float-right img-responsive masthead-img"
+            class="rounded float-right img-responsive mastdead-img"
             src="images/logo.jpg"
             alt="logo"
             title="logo"
@@ -44,7 +44,7 @@
           />
 
           <nav
-            class="nav navbar-static-top nav-masthead justify-content-center"
+            class="nav navbar-static-top nav-mastdead justify-content-center"
           >
             <a
               class="nav-link ${empty param.menu ? 'active' : ''}"
@@ -52,7 +52,6 @@
               id="startmenu"
               >Startseite</a
             >
-
             <div class="nav-item dropdown">
               <a
                 class="
@@ -114,38 +113,97 @@
         </div>
       </header>
       <main role="main" class="inner cover">
-        <!-- IMPLEMENT LOGIN FORM -->
+        <!-- User Data Check -->
         <form>
           <table class="table table-sm">
             <tr>
+              <td scope="col">Versicherungsnummer</td>
+              <td>1321</td>
+            </tr>
+            <tr>
+              <td scope="col">Geburtsdatum</td>
+              <td>1.1.2020</td>
+            </tr>
+            <tr>
+              <td scope="col">Vorname</td>
               <td>
-                <label for="verscherungsnummer">Versicherungsnummer</label>
+                <input 
+                  class="form-control"
+                type="text" id="vorname" name="vorname" value="Hannes" />
               </td>
+            </tr>
+            <tr>
+              <td scope="col">Nachname</td>
+              <td>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nachname"
+                  name="nachname"
+                  value="Hannesens"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td scope="col">Postleitzahl</td>
+              <td>
+                <input 
+                  class="form-control"
+                type="text" id="plz" name="plz" value="1010" />
+              </td>
+            </tr>
+            <tr>
+              <td scope="col">Strasse</td>
               <td>
                 <input
                   class="form-control"
                   type="text"
-                  id="versicherungsnummer"
-                  name="versicherungsnummer"
+                  id="strasse"
+                  name="strasse"
+                  value="Hauptstrasse"
                 />
               </td>
             </tr>
             <tr>
-              <td>
-                <label for="geburtsdatum">Geburtsdatum</label>
-              </td>
+              <td scope="col">Hausnummer</td>
               <td>
                 <input
                   class="form-control"
-                  type="date"
-                  id="geburtsdatum"
-                  name="geburtsdatum"
+                  type="text"
+                  id="hausnummer"
+                  name="hausnummer"
+                  value="1234"
                 />
+              </td>
+            </tr>
+            <tr>
+              <td scope="col">Tel1</td>
+              <td>
+                <input 
+                  class="form-control"
+                type="text" id="tel1" name="tel1" value="1234" />
+              </td>
+            </tr>
+            <tr>
+              <td scope="col">Tel2</td>
+              <td>
+                <input 
+                  class="form-control"
+                type="text" id="tel2" name="tel2" value="1234" />
+              </td>
+            </tr>
+            <tr>
+              <td scope="col">Tel3</td>
+              <td>
+                <input 
+                  class="form-control"
+                type="text" id="tel3" name="tel3" value="1234" />
               </td>
             </tr>
           </table>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary float-right">Login</button>
+            <button 
+            type="submit" class="btn btn-primary float-right">Submit</button>
           </div>
         </form>
       </main>
@@ -169,7 +227,7 @@
 
     <!-- Bootstrap core JavaScript
 				================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Placed at tde end of tde document so tde pages load faster -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

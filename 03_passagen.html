@@ -52,7 +52,6 @@
               id="startmenu"
               >Startseite</a
             >
-
             <div class="nav-item dropdown">
               <a
                 class="
@@ -114,40 +113,32 @@
         </div>
       </header>
       <main role="main" class="inner cover">
-        <!-- IMPLEMENT LOGIN FORM -->
-        <form>
-          <table class="table table-sm">
-            <tr>
-              <td>
-                <label for="verscherungsnummer">Versicherungsnummer</label>
-              </td>
-              <td>
-                <input
-                  class="form-control"
-                  type="text"
-                  id="versicherungsnummer"
-                  name="versicherungsnummer"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="geburtsdatum">Geburtsdatum</label>
-              </td>
-              <td>
-                <input
-                  class="form-control"
-                  type="date"
-                  id="geburtsdatum"
-                  name="geburtsdatum"
-                />
-              </td>
-            </tr>
-          </table>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary float-right">Login</button>
-          </div>
-        </form>
+	      <table class="table table-sm">
+		      <tr>
+			      <th scope="col">P NR.</th>
+			      <th scope="col">Von</th>
+			      <th scope="col">Nach</th>
+			      <th scope="col">Abfahrtszeit</th>
+			      <th scope="col">Ankunftszeit</th>
+			      <th scope="col">Buchen</th>
+		      </tr>
+		      <tr>
+			      <td>1</td>
+			      <td>Lissabon</td>
+			      <td>marseille</td>
+			      <td>1.1.2020 22:00</td>
+			      <td>2.1.2020 13:00</td>
+			      <td><button class="btn btn-primary btn-sm">Buchen</button></td>
+		      </tr>
+		      <tr>
+			      <td>2</td>
+			      <td>Genua</td>
+			      <td>San Remo</td>
+			      <td>1.1.2020 10:00</td>
+			      <td>1.1.2020 14:00</td>
+			      <td><button class="btn btn-primary btn-sm">Buchen</button></td>
+		      </tr>
+	      </table>
       </main>
 
       <footer class="mastfoot mt-auto text-center">
