@@ -7,7 +7,7 @@
                    user="csdc22bb_08" password="Toox1aa"/>
 
 <div>
-    <h2>Login</h2>
+    <h2>Daten &#252;berpr&#252;fen</h2>
 </div>
 <div>
     <sql:query var="user"

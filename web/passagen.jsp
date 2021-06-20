@@ -6,7 +6,7 @@
                    user="csdc22bb_08" password="Toox1aa"/>
 
 <div>
-    <h2>Passagen</h2>
+    <h2>Verfügbare Passagen</h2>
 </div>
 <div>
     <sql:query var="passagen"
