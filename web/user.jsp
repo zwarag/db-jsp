@@ -54,6 +54,7 @@
         <sql:query var="passagier"
                    sql="SELECT *
                FROM person
+               natural join passagier
                WHERE VERSICHERUNGSNUMMER = ${param.versicherungsnummer} AND Geburtsdatum = to_timestamp('${param.geburtsdatum}', 'yyyy-mm-dd hh24:mi:ss')">
         </sql:query>
 
@@ -64,6 +65,7 @@
         <input type="hidden" name="menu" value="passagen"/>
         <table class="table table-sm">
             <c:forEach var="passagier" begin="0" items="${passagier.rows}">
+                <input type="hidden" name="passagiernummer" value="${passagier.passagiernummer}">
                 <tr>
                     <td scope="col">Versicherungsnummer</td>
                     <td>
@@ -78,7 +80,7 @@
                     <td>
                         <input class="form-control form-control-sm" type="date" id="geburtsdatum"
                                name="geburtsdatum" value="${param.geburtsdatum}" readonly/>
-<%--                        <fmt:formatDate value="${passagier.Geburtsdatum}" pattern="yyyy-MM-dd"/>--%>
+                            <%--                        <fmt:formatDate value="${passagier.Geburtsdatum}" pattern="yyyy-MM-dd"/>--%>
                     </td>
                 </tr>
                 <tr>

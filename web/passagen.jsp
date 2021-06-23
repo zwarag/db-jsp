@@ -8,6 +8,7 @@
 
 <div>
     <h2>Verf&#252;gbare Passagen</h2>
+    <h2>Passagiernummer: ${param.passagiernummer}</h2>
 </div>
 <div>
     <sql:update var="count">
@@ -33,6 +34,7 @@
         <sql:dateParam value="${Date.valueOf(param.geburtsdatum)}"/>
     </sql:update>
 
+    <%--   todo change statement to show only the passages that the passager hasn't booked yet --%>
     <sql:query var="passagen"
                sql="SELECT *
                 FROM passage">
@@ -41,7 +43,7 @@
     <table class="table table-sm">
 
         <tr>
-            <th scope="col">Passagennummer</th>
+            <th scope="col">No.</th>
             <th scope="col">Von</th>
             <th scope="col">Nach</th>
             <th scope="col">Abfahrtszeit</th>
@@ -53,11 +55,17 @@
             <tr>
                 <td>${passage.passagennummer}</td>
                 <td>${passage.abfahrtshafen}</td>
-                <td>${passage.ankunftshafen}</td>
+                <td>${passage.zielhafen}</td>
                 <td>${passage.abfahrtszeit}</td>
                 <td>${passage.ankunftszeit}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm">Buchen</button>
+                    <form action="index.jsp"> <!-- use the controller to update session attribute -->
+                        <input type="hidden" name="menu" value="klasse"/>
+                        <input type="hidden" name="passagennummer" value="${passage.passagennummer}"/>
+                        <input type="hidden" name="passagiernummer" value="${param.passagiernummer}"/>
+                        <button class="btn btn-primary btn-sm" type="submit">Buchen</button>
+                    </form>
+                        <%--                    <button class="btn btn-primary btn-sm">Buchen</button>--%>
                 </td>
             </tr>
 
