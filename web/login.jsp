@@ -30,7 +30,7 @@
                 <td>
                     <%--                    todo format geburtsdatum to YYYY-MM-DD --%>
                     <input class="form-control form-control-sm" type="date" id="geburtsdatum" name="geburtsdatum"
-                           value="${geburtsdatum}"
+                           value="${fn:substring(geburtsdatum, 0, 10)}"
                            required/>
                 </td>
             </tr>
