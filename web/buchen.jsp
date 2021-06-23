@@ -35,6 +35,7 @@
 
 
 <div>
+    <h1>Ihre Buchungen</h1>
     <table>
 
         <tr>
@@ -55,12 +56,11 @@
             </tr>
         </c:forEach>
 
-
     </table>
     <a
             href="index.jsp"
             id="startmenu"
-    >Zurück zur Startseite</a
+    >Zur&#252;ck zur Startseite</a
     >
 
 </div>
