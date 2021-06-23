@@ -61,11 +61,15 @@
     </c:if>
 
 
-    <form method="GET" action="index.jsp">
-        <input type="hidden" name="menu" value="passagen"/>
+    <form method="POST" action="index.jsp">
+        <input type="hidden" name="menu" value="updateUser"/>
         <table class="table table-sm">
             <c:forEach var="passagier" begin="0" items="${passagier.rows}">
-                <input type="hidden" name="passagiernummer" value="${passagier.passagiernummer}">
+
+                <c:set var="geburtsdatum" scope="session" value="${passagier.geburtsdatum}"/>
+                <c:set var="versicherungsnummer" scope="session" value="${passagier.versicherungsnummer}"/>
+                <c:set var="passagiernummer" scope="session" value="${passagier.passagiernummer}"/>
+
                 <tr>
                     <td scope="col">Versicherungsnummer</td>
                     <td>
@@ -80,7 +84,6 @@
                     <td>
                         <input class="form-control form-control-sm" type="date" id="geburtsdatum"
                                name="geburtsdatum" value="${param.geburtsdatum}" readonly/>
-                            <%--                        <fmt:formatDate value="${passagier.Geburtsdatum}" pattern="yyyy-MM-dd"/>--%>
                     </td>
                 </tr>
                 <tr>

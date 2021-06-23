@@ -8,36 +8,21 @@
 
 <div>
     <h2>Verf&#252;gbare Passagen</h2>
-    <h2>Passagiernummer: ${param.passagiernummer}</h2>
 </div>
 <div>
-    <sql:update var="count">
-        UPDATE Person
-        SET Vorname=?,
-        Nachname=?,
-        Postleitzahl=?,
-        Strasse=?,
-        Hausnummer=?,
-        tel1=?,
-        tel2=?,
-        tel3=?
-        WHERE Versicherungsnummer=? AND Geburtsdatum=?
-        <sql:param value="${param.vorname}"/>
-        <sql:param value="${param.nachname}"/>
-        <sql:param value="${param.postleitzahl}"/>
-        <sql:param value="${param.strasse}"/>
-        <sql:param value="${param.hausnummer}"/>
-        <sql:param value="${param.tel1}"/>
-        <sql:param value="${param.tel2}"/>
-        <sql:param value="${param.tel3}"/>
-        <sql:param value="${param.versicherungsnummer}"/>
-        <sql:dateParam value="${Date.valueOf(param.geburtsdatum)}"/>
-    </sql:update>
-
     <%--   todo change statement to show only the passages that the passager hasn't booked yet --%>
+    <c:if test="${empty passagiernummer}">
+        <jsp:forward page="index.jsp">
+            <jsp:param name="menu" value="login"/>
+        </jsp:forward>
+    </c:if>
     <sql:query var="passagen"
-               sql="SELECT *
-                FROM passage">
+               sql="SELECT * FROM passage
+                    WHERE passagennummer
+                    NOT IN
+                    (SELECT passagennummer FROM buchung
+                    WHERE passagiernummer = ?)">
+        <sql:param value="${passagiernummer}"/>
     </sql:query>
 
     <table class="table table-sm">
@@ -59,7 +44,7 @@
                 <td>${passage.abfahrtszeit}</td>
                 <td>${passage.ankunftszeit}</td>
                 <td>
-                    <form action="index.jsp"> <!-- use the controller to update session attribute -->
+                    <form METHOD="POST" action="index.jsp"> <!-- use the controller to update session attribute -->
                         <input type="hidden" name="menu" value="klasse"/>
                         <input type="hidden" name="passagennummer" value="${passage.passagennummer}"/>
                         <input type="hidden" name="passagiernummer" value="${param.passagiernummer}"/>

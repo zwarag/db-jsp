@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page import="java.sql.Date, java.text.DateFormat" %>
 
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@localhost:1521/xepdb1"
                    user="csdc22bb_08" password="Toox1aa"/>
@@ -9,7 +10,7 @@
     <h2>Login</h2>
 </div>
 <div>
-    <form method="GET" action="index.jsp">
+    <form method="POST" action="index.jsp">
         <input type="hidden" name="menu" value="user"/>
         <table class="table table-sm">
             <tr>
@@ -19,7 +20,7 @@
                 <td>
                     <input class="form-control form-control-sm" type="number" min="1000" max="9999"
                            id="versicherungsnummer"
-                           name="versicherungsnummer" required/>
+                           name="versicherungsnummer" value="${versicherungsnummer}" required/>
                 </td>
             </tr>
             <tr>
@@ -27,7 +28,9 @@
                     <label for="geburtsdatum">Geburtsdatum</label>
                 </td>
                 <td>
+                    <%--                    todo format geburtsdatum to YYYY-MM-DD --%>
                     <input class="form-control form-control-sm" type="date" id="geburtsdatum" name="geburtsdatum"
+                           value="${geburtsdatum}"
                            required/>
                 </td>
             </tr>

@@ -10,13 +10,10 @@
 
 
 <div>
-    <p>
-        Passagiernummer: ${param.passagiernummer}
-    </p>
-    <form method="GET" action="index.jsp">
+    <form method="POST" action="index.jsp">
         <input type="hidden" name="menu" value="buchen"/>
         <input type="hidden" name="passagennummer" value="${param.passagennummer}"/>
-        <input type="hidden" name="passagiernummer" value="${param.passagiernummer}"/>
+        <input type="hidden" name="passagiernummer" value="${passagiernummer}"/>
 
         <input type="radio" id="klasse1" name="klasse" value="First Class">
         <label for="klasse1">First Class</label><br>

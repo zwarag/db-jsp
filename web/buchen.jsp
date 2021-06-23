@@ -12,56 +12,20 @@
     FROM BUCHUNG
     WHERE Passagennummer = ? AND Passagiernummer = ?
     <sql:param value="${param.passagennummer}"/>
-    <sql:param value="${param.passagiernummer}"/>
+    <sql:param value="${passagiernummer}"/>
 </sql:query>
-
 
 <c:if test="${exists.getRowCount() == 0}">
     <sql:update>
-        INSERT INTO BUCHUNG(Passagennummer, Passagiernummer,Buchungsdatum, Klasse)
+        INSERT INTO BUCHUNG(Passagennummer, Passagiernummer, Buchungsdatum, Klasse)
         VALUES (?, ?, CURRENT_TIMESTAMP, ?)
         <sql:param value="${param.passagennummer}"/>
-        <sql:param value="${param.passagiernummer}"/>
+        <sql:param value="${passagiernummer}"/>
         <sql:param value="${param.klasse}"/>
     </sql:update>
 </c:if>
 
-<sql:query var="buchungen">
-    SELECT *
-    FROM BUCHUNG
-    WHERE Passagiernummer = ?
-    <sql:param value="${param.passagiernummer}"/>
-</sql:query>
-
-
-<div>
-    <h1>Ihre Buchungen</h1>
-    <table>
-
-        <tr>
-            <th scope="col">Passagier No.</th>
-            <th scope="col">Passagen No.</th>
-            <th scope="col">Buchungs No.</th>
-            <th scope="col">Buchungsdatum</th>
-            <th scope="col">Klasse</th>
-        </tr>
-
-        <c:forEach var="buchungen" begin="0" items="${buchungen.rows}">
-            <tr>
-                <td>${buchungen.passagiernummer}</td>
-                <td>${buchungen.passagennummer}</td>
-                <td>${buchungen.buchungsnummer}</td>
-                <td>${buchungen.buchungsdatum}</td>
-                <td>${buchungen.klasse}</td>
-            </tr>
-        </c:forEach>
-
-    </table>
-    <a
-            href="index.jsp"
-            id="startmenu"
-    >Zur&#252;ck zur Startseite</a
-    >
-
-</div>
+<jsp:forward page="index.jsp">
+    <jsp:param name="menu" value="buchungen_anzeigen"/>
+</jsp:forward>
 
