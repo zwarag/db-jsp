@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ page import="java.sql.Date, java.text.DateFormat" %>
+<%@ page import="java.sql.Date, java.text.DateFormat, java.sql.Timestamp, java.lang.System" %>
 
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@localhost:1521/xepdb1"
                    user="csdc22bb_08" password="Toox1aa"/>
@@ -28,9 +28,11 @@
                     <label for="geburtsdatum">Geburtsdatum</label>
                 </td>
                 <td>
-                    <%--                    todo format geburtsdatum to YYYY-MM-DD --%>
+                    <c:set var="currentTime" scope="page" value="<%=(new Timestamp(System.currentTimeMillis())) %>"/>
+
                     <input class="form-control form-control-sm" type="date" id="geburtsdatum" name="geburtsdatum"
-                           value="${fn:substring(geburtsdatum, 0, 10)}"
+                           value="${fn:substring(geburtsdatum, 0, 10)}" min="1900-01-01"
+                           max="${fn:substring(currentTime, 0, 10)}"
                            required/>
                 </td>
             </tr>
